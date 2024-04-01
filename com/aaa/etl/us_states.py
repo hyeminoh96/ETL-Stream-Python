@@ -52,3 +52,9 @@ class US_STATES(Enum):
     WI = "Wisconsin"
     WY = "Wyoming"
 
+    @staticmethod
+    def parse(input_str):
+        list_state = [i.value for i in US_STATES if i.name.lower() == 
+                      input_str.lower() or i.value.lower() == input_str.lower()]
+        if list_state.__len__() == 1:
+            return list_state.pop(0)
