@@ -16,7 +16,7 @@ class Fred2Hdfs(object):
         os.chdir(path)
         config.read('resources/SystemConfig.ini')
         
-        _api_key = config['FRED_COFNIG']['api_key']
+        _api_key = config['FRED_CONFIG']['api_key']
         self._fred = Fred(api_key=_api_key)
         self._hdfs = fs.HadoopFileSystem('localhost', 9000)
         
